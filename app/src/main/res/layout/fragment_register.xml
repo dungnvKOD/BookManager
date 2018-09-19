@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F6"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toobar_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7400B2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmailR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtEmailR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:text="dung@gmail.com"
+                android:textColor="@color/ChuDen"
+                android:textColorLink="#ffff" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilPassR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:errorEnabled="true"
+            app:passwordToggleEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtPassR"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pass"
+                android:inputType="textPassword"
+                android:text="dungbg1"
+                android:textColor="@color/ChuDen" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilRePassR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:errorEnabled="true"
+            app:passwordToggleEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtRePassR"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Re-Pass"
+                android:inputType="textPassword"
+                android:text="dungbg1"
+                android:textColor="@color/ChuDen" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilPhoneNumberR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:errorEnabled="true"
+            app:passwordToggleEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtPhoneNumberR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PhoneNumber"
+                android:inputType="number"
+                android:text="0868852102"
+                android:textColor="@color/ChuDen" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilNameR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtNameR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PhoneNumber"
+                android:inputType="text"
+                android:text="Dung"
+                android:textColor="@color/ChuDen" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnRegisterR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_button_login"
+            android:foreground="?actionBarItemBackground"
+            android:text="Register"
+            android:textColor="@color/ChuTrang" />
+    </LinearLayout>
+</LinearLayout>

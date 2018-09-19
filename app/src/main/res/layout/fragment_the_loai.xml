@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F6"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toobarTheLoai"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#7400B2" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvTheLoai"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toobarTheLoai" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabTheLoai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#7400B2"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_black_24dp" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BookManagerKotlin</string>
+    <string name="txtUser">User</string>
+    <string name="txt_the_loai">The Loai</string>
+    <string name="txt_sach">Sach</string>
+    <string name="txt_hoa_don">Hoa Don</string>
+    <string name="txt_thong_ke">Thong Ke</string>
+
+</resources>

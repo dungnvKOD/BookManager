@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ede9e9"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:text="Book"
+        android:textColor="#f74444"
+        android:textSize="54dp"
+        android:textStyle="bold|italic" />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilEmailL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edtEmailL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:text="dung@gmail.com"
+            android:textColor="@color/ChuDen"
+            android:textColorLink="#ffff" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilPassL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:errorEnabled="true"
+        app:passwordToggleEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/edtPassL"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pass"
+            android:inputType="textPassword"
+            android:text="dungbg1"
+            android:textColor="@color/ChuDen" />
+    </android.support.design.widget.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Save user"
+        android:textColor="@color/ChuDen" />
+
+    <Button
+
+        android:id="@+id/btnLoginL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_button_login"
+        android:text="Login"
+        android:textColor="@color/ChuTrang" />
+
+    <TextView
+        android:id="@+id/btnRegisterL"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Do you have an account?"
+        android:textColor="@color/ChuDen" />
+
+</LinearLayout>
