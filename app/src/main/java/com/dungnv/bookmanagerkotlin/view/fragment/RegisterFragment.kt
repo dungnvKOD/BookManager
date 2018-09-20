@@ -23,6 +23,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
 
     companion object {
         @SuppressLint("StaticFieldLeak")
+        val TAG = "RegisterFragment"
         val newFragment = RegisterFragment()
     }
 
@@ -74,26 +75,24 @@ class RegisterFragment : Fragment(), View.OnClickListener {
                 && register.checkPassword(edtPassR, tilPassR)
                 && register.checkPhoneNumber()
                 && register.checkDateBirth()) {
-            val pass = edtPassR.text.toString()
-            val email = edtEmailR.text.toString()
-            val name = edtNameR.text.toString()
-            val phoneNumber = edtPhoneNumberR.text.toString()
-
+            val pass = edtPassR.text.toString().trim()
+            val email = edtEmailR.text.toString().trim()
+            val name = edtNameR.text.toString().trim()
+            val phoneNumber = edtPhoneNumberR.text.toString().trim()
             val user = User(email, pass, name, phoneNumber)
 
-            //ban data sang login
-            val intent = Intent(Key.ACTION_1)
-            val bundle = Bundle()
-            bundle.putString(Key.PASS_L, pass)
-            bundle.putString(Key.ID_L, email)
-            intent.putExtras(bundle)
-            (activity as BackgroundActivity).sendBroadcast(intent)
             //TODO dang ky thanh cong va xu ly data base
-            val check = usersData.insertUser(user)
-            if (check) {
-                (activity as BackgroundActivity).BaseFragment().replace(BackGroundFragment.newFragment)
+            if (usersData.checkRegister(email)) {
+                val check = usersData.insertUser(user)
+
+                if (check) {
+                    (activity as BackgroundActivity).user = usersData.getUserByEmail(email)
+                    (activity as BackgroundActivity).BaseFragment().replace(BackGroundFragment.newFragment)
+                } else {
+                    Toast.makeText(activity!!, "Them khong thanh cong", Toast.LENGTH_LONG).show()
+                }
             } else {
-                Toast.makeText(activity!!, "Them khong thanh cong", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity!!, "Da co tai khoan", Toast.LENGTH_LONG).show()
             }
 
         } else {

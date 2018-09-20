@@ -42,7 +42,7 @@ class MenuFragment : Fragment(), View.OnClickListener {
         when (v!!.id) {
 
             R.id.btnUser -> {
-                val userFragment = UserFragment.newFragment
+                val userFragment = UserBottomSheetFragment.newFragment
                 userFragment.show(childFragmentManager, userFragment.javaClass.name)
             }
             R.id.btnTheLoai -> {

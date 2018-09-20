@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class MyDatabase(context: Context) : SQLiteOpenHelper(context, DATA_BASE, null, VERSION) {
 
-    //vi
+
     companion object {
         const val DATA_BASE = "me"
         const val VERSION = 1
@@ -34,8 +34,8 @@ class MyDatabase(context: Context) : SQLiteOpenHelper(context, DATA_BASE, null, 
 
         const val HDCT_MAHOADONCHITIET = "HDCT_MAHOADONCHITIET"
         const val HDCT_SOLUONGMUA = "HDCT_SOLUONGMUA"
-        const val MAHOADON_HDCT = "MAHOADON_HDCT"
         const val MASACH__HDCT = "MASACH__HDCT"
+        const val MAHOADON_HDCT = "MAHOADON_HDCT"
 
         const val TB_SACH = "SACH"
 

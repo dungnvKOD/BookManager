@@ -16,14 +16,14 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imgBackground"
+            android:id="@+id/imgBackgroundBU"
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:scaleType="centerCrop"
             android:src="@drawable/anh" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgAvatar"
+            android:id="@+id/imgAvatarBU"
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_alignBottom="@id/imgBackground"
@@ -34,7 +34,7 @@
             app:civ_border_width="2dp" />
 
         <TextView
-            android:id="@+id/txtNameUserU"
+            android:id="@+id/txtNameUserBU"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/txtPhoneNumberUserU"
@@ -45,7 +45,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtPhoneNumberUserU"
+            android:id="@+id/txtPhoneNumberUserBU"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/imgAvatar"
@@ -57,7 +57,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btnDoiMatKhau"
+        android:id="@+id/btnDoiMatKhauBU"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
         android:textColor="#ffff" />
 
     <Button
-        android:id="@+id/btnDangXuat"
+        android:id="@+id/btnDangXuatBU"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
