@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dungnv.bookmanagerkotlin.R
+import com.dungnv.bookmanagerkotlin.view.fragment.menufragment.TheLoaiFragment
 import com.dungnv.myapp.view.fragment.menufragment.*
 import kotlinx.android.synthetic.main.fragment_menu.*
 

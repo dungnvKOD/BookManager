@@ -1,6 +1,6 @@
 package com.dungnv.myapp.model.Entity
 
-class Invoice {//hoa don
+class Bill {//hoa don
     var idInvoice: String? = null//ma hoa don
     var purchasing: String? = null//ngay mua
 

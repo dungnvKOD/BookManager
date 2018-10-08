@@ -41,7 +41,6 @@ class UserData(context: Context) {
         return index.toInt() != -1
     }
 
-
     /**
     query tim kiem user voi username = tham so truyen vao
 
@@ -72,7 +71,9 @@ class UserData(context: Context) {
 
         val columnt = arrayOf(MyDatabase.U_USERNAME, MyDatabase.U_PASS, MyDatabase.U_NAME, MyDatabase.U_PHONEME)
 
-        val cursor = database!!.query(MyDatabase.TB_USER, columnt, "${MyDatabase.U_USERNAME}=?", arrayOf(email), null, null, null)
+        val sql = "SELECT *FROM ${MyDatabase.TB_USER} WHERE ${MyDatabase.U_USERNAME}='$email'"
+
+        val cursor = database!!.rawQuery(sql, null)
 
         if (cursor != null && cursor.moveToFirst()) {
             val email = cursor.getString(cursor.getColumnIndex(MyDatabase.U_USERNAME))
@@ -89,19 +90,23 @@ class UserData(context: Context) {
         return user
     }
 
-    fun getAllUser(): ArrayList<User> {
+    fun getAllUser(emailU: String): ArrayList<User> {
         open()
         var users: ArrayList<User> = ArrayList()
         val sql = "SELECT * FROM ${MyDatabase.TB_USER}"
         var cursor: Cursor = database!!.rawQuery(sql, null)
         cursor.moveToFirst()
-        while (cursor != null && !cursor.isAfterLast) {
-            val email = cursor.getString(cursor.getColumnIndex(MyDatabase.U_USERNAME))
-            val pass = cursor.getString(cursor.getColumnIndex(MyDatabase.U_PASS))
-            val name = cursor.getString(cursor.getColumnIndex(MyDatabase.U_NAME))
-            val phone = cursor.getString(cursor.getColumnIndex(MyDatabase.U_PHONEME))
-            val user = User(email, pass, name, phone)
-            users.add(user)
+        while (!cursor.isAfterLast) {
+            val email: String = cursor.getString(cursor.getColumnIndex(MyDatabase.U_USERNAME))
+            val pass: String = cursor.getString(cursor.getColumnIndex(MyDatabase.U_PASS))
+            val name: String = cursor.getString(cursor.getColumnIndex(MyDatabase.U_NAME))
+            val phone: String = cursor.getString(cursor.getColumnIndex(MyDatabase.U_PHONEME))
+            var user: User? = null
+            if (emailU != email) {
+                user = User(email, pass, name, phone)
+                users.add(user!!)
+                cursor.moveToNext()
+            }
             cursor.moveToNext()
         }
         if (Constants.isDebug) Log.d(TAG, users.size.toString() + "......")
@@ -109,12 +114,23 @@ class UserData(context: Context) {
         return users
     }
 
+    fun updateUser(user: User): Boolean {
+        open()
+        val value = ContentValues()
+        value.put(MyDatabase.U_PASS, user.password)
+        value.put(MyDatabase.U_NAME, user.name)
+        value.put(MyDatabase.U_PHONEME, user.phoneNumber)
+
+        val count = database!!.update(MyDatabase.TB_USER, value, "${MyDatabase.U_USERNAME}=?", arrayOf(user.userName))
+        close()
+        return count != -1
+    }
+
     fun remove(email: String): Boolean {
         open()
         val check = database!!.delete(MyDatabase.TB_USER, "${MyDatabase.U_USERNAME}=?", arrayOf(email))
         close()
         return check == 1
-
     }
 
 

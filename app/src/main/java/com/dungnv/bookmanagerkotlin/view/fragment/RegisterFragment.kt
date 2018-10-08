@@ -86,7 +86,11 @@ class RegisterFragment : Fragment(), View.OnClickListener {
                 val check = usersData.insertUser(user)
 
                 if (check) {
-                    (activity as BackgroundActivity).user = usersData.getUserByEmail(email)
+//                    (activity as BackgroundActivity).myUser = usersData.getUserByEmail(email)
+                    (activity as BackgroundActivity).email = usersData.getUserByEmail(email)!!.userName
+                    (activity as BackgroundActivity).pass = usersData.getUserByEmail(email)!!.password
+                    (activity as BackgroundActivity).phone = usersData.getUserByEmail(email)!!.phoneNumber
+                    (activity as BackgroundActivity).name = usersData.getUserByEmail(email)!!.name
                     (activity as BackgroundActivity).BaseFragment().replace(BackGroundFragment.newFragment)
                 } else {
                     Toast.makeText(activity!!, "Them khong thanh cong", Toast.LENGTH_LONG).show()

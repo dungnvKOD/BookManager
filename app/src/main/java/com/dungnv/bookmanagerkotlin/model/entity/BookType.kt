@@ -14,6 +14,15 @@ class BookType {
         this.location = location
     }
 
+
     constructor()
+
+    constructor(nameType: String?, description: String?, location: Int) {
+        this.nameType = nameType
+        this.description = description
+        this.location = location
+    }
+
+
 
 }

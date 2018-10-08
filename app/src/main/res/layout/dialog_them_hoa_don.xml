@@ -23,21 +23,12 @@
             android:textColor="@color/ChuDen" />
     </android.support.design.widget.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tiNgayMuaDialog"
+
+    <Button
+        android:id="@+id/btnNgayMuaDialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:errorEnabled="true"
-        app:passwordToggleEnabled="true">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/edtNgayMuaDialog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ngay Mua"
-            android:textColor="@color/ChuDen" />
-    </android.support.design.widget.TextInputLayout>
+        android:background="@drawable/shape_button_login" />
 
     <LinearLayout
         android:layout_width="match_parent"

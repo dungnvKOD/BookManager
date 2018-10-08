@@ -62,14 +62,14 @@ class MyDatabase(context: Context) : SQLiteOpenHelper(context, DATA_BASE, null, 
             "$S_TIEU_DE TEXT ," +
             "$S_TAC_GIA TEXT," +
             "$S_NXB TEXT," +
-            "$S_GIABIA TEXT," +
+            "$S_GIABIA REAL," +//kieu double
             "$S_SOLUONG INTEGER," +
             "$MATHELOAI_SACH TEXT ," +
             "FOREIGN KEY($MATHELOAI_SACH) REFERENCES $TB_THE_LOAI_SACH($TLS_IDTHELOAI))"
 
     private val tbMaHoaDon = "CREATE TABLE $TB_HOA_DON(" +
             "$HD_MAHOADON TEXT PRIMARY KEY," +
-            "$HD_NGAYMUA TEXT)"
+            "$HD_NGAYMUA LONG)"
 
     private val tbTheLoaiSach = "CREATE TABLE $TB_THE_LOAI_SACH(" +
             "$TLS_IDTHELOAI TEXT PRIMARY KEY," +

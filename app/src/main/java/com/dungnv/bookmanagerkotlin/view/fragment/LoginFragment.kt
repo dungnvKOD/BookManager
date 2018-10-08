@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.dungnv.bookmanagerkotlin.R
+import com.dungnv.bookmanagerkotlin.common.Constants
 import com.dungnv.myapp.model.data.UserData
 import com.dungnv.myapp.view.BaseLoginAndRegister
 import com.dungnv.myapp.view.activity.BackgroundActivity
@@ -47,20 +48,27 @@ class LoginFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnLoginL -> {
-                val email = edtEmailL.text.toString()
+                val email: String? = edtEmailL.text.toString().trim()
                 val pass: String? = edtPassL.text.toString().trim()
-                Log.d(TAG, "$pass...")
+//                Log.d(TAG, "$pass...")
 //                Log.d(TAG, "${userData.getUserByEmail(email)!!.password}...")
 
                 if (login.checkId(edtEmailL, tilEmailL) && login.checkPassword(edtPassL, tilPassL)) {
                     //TODO  ....
-                    if (userData.getUserByEmail(email) != null) {
+                    if (userData.getUserByEmail(email!!) != null) {
                         if (pass == userData.getUserByEmail(email)!!.password) {
-                            (activity as BackgroundActivity).user = userData.getUserByEmail(email)
+//                            (activity as BackgroundActivity).myUser = userData.getUserByEmail(email)
+
+                            (activity as BackgroundActivity).email = userData.getUserByEmail(email)!!.userName
+                            (activity as BackgroundActivity).pass = userData.getUserByEmail(email)!!.password
+                            (activity as BackgroundActivity).phone = userData.getUserByEmail(email)!!.phoneNumber
+                            (activity as BackgroundActivity).name = userData.getUserByEmail(email)!!.name
+
+                            if (Constants.isDebug) Log.d(TAG, "...DUNG...: ${userData.getUserByEmail(email)!!.name}")
                             (activity as BackgroundActivity).BaseFragment().replace(BackGroundFragment.newFragment)
                         }
                     } else {
-                        Toast.makeText(activity, "Saai mat khau hoac tai khoan", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, "Sai mat khau hoac tai khoan", Toast.LENGTH_LONG).show()
                     }
                 }
             }

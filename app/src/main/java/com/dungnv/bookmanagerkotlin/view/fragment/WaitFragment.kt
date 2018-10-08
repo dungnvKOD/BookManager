@@ -32,5 +32,6 @@ class WaitFragment : Fragment() {
         Handler().postDelayed({
             (activity as BackgroundActivity).BaseFragment().replace(LoginRegisterManagerFragment.newFRagment)
         }, 1000)
+
     }
 }

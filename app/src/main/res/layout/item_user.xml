@@ -2,50 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp">
+    android:orientation="vertical">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgAvatarIU"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/hdicon" />
-
-    <LinearLayout
-        android:layout_width="0dp"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
 
-        <TextView
-            android:id="@+id/txtNameIU"
-            android:layout_width="match_parent"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgAvatarIU"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/hdicon" />
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="dung"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtNameIU"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="dung"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtPhoneNumberIU"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="16666"
+                android:textSize="14sp" />
+        </LinearLayout>
         <TextView
-            android:id="@+id/txtPhoneNumberIU"
-            android:layout_width="match_parent"
+            android:id="@+id/txtGioiTinhIU"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="16666"
-            android:textSize="14sp" />
-
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="Nam"
+            android:textSize="12sp" />
     </LinearLayout>
 
-    <TextView
-        android:layout_weight="0.5"
-        android:id="@+id/txtGioiTinhIU"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginRight="16dp"
-        android:gravity="center"
-        android:text="Nam"
-        android:textSize="12sp" />
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#acacac" />
 </LinearLayout>

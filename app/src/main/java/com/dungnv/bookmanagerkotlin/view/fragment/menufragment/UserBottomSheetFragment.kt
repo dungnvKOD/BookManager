@@ -32,15 +32,14 @@ class UserBottomSheetFragment : BottomSheetDialogFragment(), View.OnClickListene
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dialog = ChangePassword(activity as BackgroundActivity)
         init()
         btnDoiMatKhauBU.setOnClickListener(this)
         btnDangXuatBU.setOnClickListener(this)
     }
 
     private fun init() {
-        txtNameUserBU.text = (activity as BackgroundActivity).user!!.name
-        txtPhoneNumberUserBU.text = (activity as BackgroundActivity).user!!.phoneNumber
+        txtNameUserBU.text = (activity as BackgroundActivity)!!.name
+        txtPhoneNumberUserBU.text = (activity as BackgroundActivity)!!.phone
 
     }
 
@@ -48,13 +47,11 @@ class UserBottomSheetFragment : BottomSheetDialogFragment(), View.OnClickListene
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnDoiMatKhauBU -> {
-//                dialog.show()
                 BackGroundFragment().BaseFragment().addFragment(UserFragment.newFragment)
                 dismiss()
             }
             R.id.btnDangXuatBU -> {
                 //TODO truoc khi dang xuat gan toan bo data ve null
-
 
                 dismiss()
             }

@@ -6,4 +6,8 @@
     <string name="txt_hoa_don">Hoa Don</string>
     <string name="txt_thong_ke">Thong Ke</string>
 
+    <string name="action_settings">Settings</string>
+    <string name="my_cart">My Cart</string>
+    <string name="delete">DELETE</string>
+
 </resources>
